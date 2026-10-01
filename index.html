@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jev Triage</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --accent: #6d4aff;
+            --bad: #c0392b;
+            font-family: system-ui, sans-serif;
+        }
+        body { max-width: 52rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+        textarea { width: 100%; min-height: 9rem; box-sizing: border-box; font: inherit; padding: .5rem; }
+        button { font: inherit; padding: .5rem 1rem; border: 0; border-radius: .4rem; background: var(--accent); color: white; cursor: pointer; }
+        button:disabled { opacity: .5; cursor: progress; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #8884; }
+        tr[data-verdict="build"] td:nth-child(2) { color: #1e8e3e; font-weight: 600; }
+        tr[data-verdict="drop"] td:nth-child(2) { color: var(--bad); }
+        #status[data-error="true"] { color: var(--bad); }
+        .table-wrap { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Jev Triage</h1>
+    <p>
+        List your ideas, one per line. Jev scores each on market, feasibility
+        and novelty, picks the main customer, and says how likely it is worth
+        a weekend prototype. This page ranks them and issues the verdict.
+    </p>
+
+    <section id="signin">
+        <p>
+            Sign in with Pollinations to pay with your own Pollen. The key is
+            limited to <code id="model"></code>, up to <span id="budget"></span>
+            Pollen, for one day.
+        </p>
+        <button id="signin-button" type="button">Sign in with Pollinations</button>
+    </section>
+
+    <section id="app" hidden>
+        <label for="ideas">Ideas (up to <span id="limit"></span>)</label>
+        <textarea id="ideas" placeholder="A browser extension that summarises long email threads&#10;A marketplace for used climbing gear"></textarea>
+        <p><button id="run" type="button">Triage</button></p>
+    </section>
+
+    <p id="status" role="status"></p>
+
+    <section id="output" hidden>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Idea</th><th>Verdict</th><th>Worth building</th><th>Overall score</th><th>Customer</th></tr>
+                </thead>
+                <tbody id="results"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+	"name": "jev-triage",
+	"version": "1.0.0",
+	"description": "Idea triage where Jev decides and the code acts, paid with your own Pollinations Pollen",
+	"type": "module",
+	"scripts": {
+		"test": "node --test test/*.test.js"
+	},
+	"license": "MIT"
+}

@@ -37,6 +37,12 @@ For all Pollinations-hosted MCP servers, see the
 | `listModels` | List live models, capabilities, voices, and pricing | Model registry routes |
 | `getModelStatus` | Inspect recent requests, errors, and latency | `/models/status` |
 | `getBalance` | Check remaining Pollen; requires `account:usage` | `/account/balance` |
+| `getUsage` | Request history or a daily summary; requires `account:usage` | `/account/usage`, `/account/usage/daily` |
+| `getEarnings` | Developer earnings from apps and community models; requires `account:usage` | `/account/earnings` |
+| `listQuests` | Quests, status and rewards; requires `account:usage` | `/account/quests` |
+| `listKeys` | List API keys; requires `account:keys` | `/account/keys` |
+| `createKey` | Create an API key, shown once; requires `account:keys` | `/account/keys` |
+| `revokeKey` | Revoke an API key by id; requires `account:keys` | `/account/keys/{id}` |
 
 Generated media is returned as an MCP resource link using the API's existing
 public Media URL. No download or re-upload is needed, and binary data does not

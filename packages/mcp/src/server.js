@@ -45,6 +45,11 @@ Pollinations is a live multi-model gateway. Never decide that a requested model 
 - For pricing, quote the returned pricing fields and currency; do not estimate.
 - Use getModelStatus for recent health and latency, not model discovery.
 
+## Account
+
+- getBalance, getUsage, getEarnings and listQuests read the account and need the 'account:usage' key permission.
+- listKeys, createKey and revokeKey manage API keys and need 'account:keys'. createKey shows the new key once; never repeat it back unless the user asks.
+
 ## API Endpoint
 All requests go through: ${validateApiBaseUrl()}`;
 

@@ -21,7 +21,7 @@ packages/mcp/
       embeddingService.js        # createEmbeddings
       model3dService.js           # generate3D
       discoveryService.js        # listModels, getModelStatus
-      accountService.js          # getBalance                          (via /account/*)
+      accountService.js          # balance, usage, earnings, quests, keys (via /account/*)
     utils/
       authUtils.js               # request-scoped bearer auth
       coreUtils.js               # fetch wrappers, URL builders, error mapping

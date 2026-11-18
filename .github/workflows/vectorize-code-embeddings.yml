@@ -22,6 +22,7 @@ on:
 
 jobs:
   embed:
+    if: github.repository == 'pollinations/pollinations'
     runs-on: ubuntu-latest
     concurrency:
       group: vectorize-code-embeddings

@@ -19,6 +19,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.repository == 'pollinations/pollinations'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

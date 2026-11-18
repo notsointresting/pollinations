@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   express:
+    if: github.repository == 'pollinations/pollinations'
     runs-on: ubuntu-latest
     permissions:
       contents: read

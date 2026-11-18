@@ -18,6 +18,7 @@ concurrency:
 
 jobs:
   sync:
+    if: github.repository == 'pollinations/pollinations'
     runs-on: ubuntu-latest
     timeout-minutes: 30
 

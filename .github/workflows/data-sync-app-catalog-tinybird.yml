@@ -13,6 +13,7 @@ permissions: {}
 
 jobs:
   sync:
+    if: github.repository == 'pollinations/pollinations'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
